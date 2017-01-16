@@ -3,27 +3,27 @@ package com.nashvi.labs.accounts;
 import java.util.Arrays;
 import java.util.List;
 
-public class AccountWrapper {
+public class AccountsWrapper {
 	private String description;
 
 	private List<Account> accounts;
 
-	public AccountWrapper() {
+	public AccountsWrapper() {
 	}
 
-	public AccountWrapper(String description, List<Account> accounts) {
+	public AccountsWrapper(String description, List<Account> accounts) {
 		super();
 		this.description = description;
 		this.accounts = accounts;
 	}
 
-	public AccountWrapper(String description, Account account) {
+	public AccountsWrapper(String description, Account account) {
 		super();
 		this.description = description;
 		this.accounts = Arrays.asList(account);
 	}
 
-	public AccountWrapper(String description) {
+	public AccountsWrapper(String description) {
 		this.description = description;
 	}
 
