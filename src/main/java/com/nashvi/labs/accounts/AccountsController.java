@@ -24,18 +24,18 @@ public class AccountsController {
 	}
 
 	@RequestMapping(value = "/accounts/{id}", method = RequestMethod.PUT)
-	public AccountsWrapper editAccountById(@RequestBody Account account, @PathVariable int id) {
+	public AccountsWrapper updateAccountById(@RequestBody Account account, @PathVariable Long id) {
 		return new AccountsWrapper("Account-by-id: {" + id + "} successfully updated.",
-				this.service.updateById(id, account));
+				this.service.updateByAccountId(id, account));
 	}
 
 	@RequestMapping(value = "/accounts/{id}", method = RequestMethod.GET)
-	public AccountsWrapper getAccountById(@PathVariable int id) {
+	public AccountsWrapper getAccountById(@PathVariable Long id) {
 		return new AccountsWrapper("Requested account-by-id details", this.service.findById(id));
 	}
 
 	@RequestMapping(value = "/accounts/{id}", method = RequestMethod.DELETE)
-	public AccountsWrapper deleteAccountById(@PathVariable int id) {
+	public AccountsWrapper deleteAccountById(@PathVariable Long id) {
 		this.service.delete(id);
 		return new AccountsWrapper(String.format("Requested account-by-id: {%s} removed successfully", id));
 	}

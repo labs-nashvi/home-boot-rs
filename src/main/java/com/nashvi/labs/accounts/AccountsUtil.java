@@ -4,20 +4,22 @@ import java.util.Date;
 
 public class AccountsUtil {
 
-	public static Account updateOldAccount(Account requestedAccount, Account oldAccount) {
-		if (requestedAccount.getName() != null) {
-			oldAccount.setName(requestedAccount.getName());
+	public static Account copyPropertyChange(Account newAccount, Account oldAccount) {
+		if (newAccount.getName() != null) {
+			oldAccount.setName(newAccount.getName());
 		}
-		if (requestedAccount.getOpeningBalance() > 0) {
-			oldAccount.setOpeningBalance(requestedAccount.getOpeningBalance());
+		if (newAccount.getOpeningBalance() >= 0) {
+			oldAccount.setOpeningBalance(newAccount.getOpeningBalance());
 		}
-		if (requestedAccount.getClosingBalance() > 0) {
-			oldAccount.setClosingBalance(requestedAccount.getClosingBalance());
+		if (newAccount.getClosingBalance() >= 0) {
+			oldAccount.setClosingBalance(newAccount.getClosingBalance());
 		}
-		if (requestedAccount.getAccountType() != null) {
-			oldAccount.setAccountType(requestedAccount.getAccountType());
+		if (newAccount.getAccountType() != null) {
+			oldAccount.setAccountType(newAccount.getAccountType());
 		}
+
 		oldAccount.setModifiedOn(new Date());
+
 		return oldAccount;
 	}
 }
