@@ -31,6 +31,7 @@ public class AccountsServiceImpl implements AccountsService {
 
 	@Override
 	public Account save(Account account, boolean isNewSave) {
+		// AccountValidator.validateNewAccountData(account);
 		if (isNewSave) {
 			account.setOpenedOn(new Date());
 		}
