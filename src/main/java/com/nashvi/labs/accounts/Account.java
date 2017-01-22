@@ -2,9 +2,17 @@ package com.nashvi.labs.accounts;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Account {
 
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private AccountType accountType;
 	private String name;
 	private double openingBalance;
@@ -15,11 +23,11 @@ public class Account {
 	public Account() {
 	}
 
-	public Account(int id) {
+	public Account(Long id) {
 		this.id = id;
 	}
 
-	public Account(int id, AccountType accountType, String name, double openingBalance, double closingBalance,
+	public Account(Long id, AccountType accountType, String name, double openingBalance, double closingBalance,
 			Date openedOn, Date modifiedOn) {
 		super();
 		this.id = id;
@@ -33,11 +41,11 @@ public class Account {
 		this.modifiedOn = modifiedOn;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -93,7 +101,7 @@ public class Account {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id;
+		result = (int) (prime * result + id);
 		return result;
 	}
 
