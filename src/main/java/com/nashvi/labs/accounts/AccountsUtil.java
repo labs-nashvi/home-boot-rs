@@ -8,10 +8,10 @@ public class AccountsUtil {
 		if (newAccount.getName() != null) {
 			oldAccount.setName(newAccount.getName());
 		}
-		if (newAccount.getOpeningBalance() > 0) {
+		if (newAccount.getOpeningBalance() >= 0) {
 			oldAccount.setOpeningBalance(newAccount.getOpeningBalance());
 		}
-		if (newAccount.getClosingBalance() > 0) {
+		if (newAccount.getClosingBalance() >= 0) {
 			oldAccount.setClosingBalance(newAccount.getClosingBalance());
 		}
 		if (newAccount.getAccountType() != null) {
