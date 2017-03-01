@@ -6,18 +6,18 @@ import java.util.List;
 public class AccountsWrapper {
 	private String description;
 
-	private List<Account> accounts;
+	private List<Accounts> accounts;
 
 	public AccountsWrapper() {
 	}
 
-	public AccountsWrapper(String description, List<Account> accounts) {
+	public AccountsWrapper(String description, List<Accounts> accounts) {
 		super();
 		this.description = description;
 		this.accounts = accounts;
 	}
 
-	public AccountsWrapper(String description, Account account) {
+	public AccountsWrapper(String description, Accounts account) {
 		super();
 		this.description = description;
 		this.accounts = Arrays.asList(account);
@@ -35,11 +35,11 @@ public class AccountsWrapper {
 		this.description = description;
 	}
 
-	public List<Account> getAccounts() {
+	public List<Accounts> getAccounts() {
 		return accounts;
 	}
 
-	public void setAccounts(List<Account> accounts) {
+	public void setAccounts(List<Accounts> accounts) {
 		this.accounts = accounts;
 	}
 

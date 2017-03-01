@@ -19,12 +19,12 @@ public class AccountsController {
 	}
 
 	@RequestMapping(value = "/accounts/add", method = RequestMethod.POST)
-	public AccountsWrapper addNewAccount(@RequestBody Account account) {
+	public AccountsWrapper addNewAccount(@RequestBody Accounts account) {
 		return new AccountsWrapper("New Account successfully added", this.service.save(account, true));
 	}
 
 	@RequestMapping(value = "/accounts/{id}", method = RequestMethod.PUT)
-	public AccountsWrapper updateAccountById(@RequestBody Account account, @PathVariable Long id) {
+	public AccountsWrapper updateAccountById(@RequestBody Accounts account, @PathVariable Long id) {
 		return new AccountsWrapper("Account-by-id: {" + id + "} successfully updated.",
 				this.service.updateByAccountId(id, account));
 	}

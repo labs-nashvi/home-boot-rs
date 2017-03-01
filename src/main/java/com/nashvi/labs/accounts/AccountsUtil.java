@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class AccountsUtil {
 
-	public static Account copyPropertyChange(Account newAccount, Account oldAccount) {
+	public static Accounts copyPropertyChange(Accounts newAccount, Accounts oldAccount) {
 		if (newAccount.getName() != null) {
 			oldAccount.setName(newAccount.getName());
 		}

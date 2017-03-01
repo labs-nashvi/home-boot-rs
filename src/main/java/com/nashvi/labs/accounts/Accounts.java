@@ -2,32 +2,48 @@ package com.nashvi.labs.accounts;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Account {
+@Table(name = "ACCOUNTS")
+public class Accounts {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ACCOUNT_ID")
 	private Long id;
+
+	@Column(name = "ACCOUNT_TYPE")
 	private AccountType accountType;
+
+	@Column(name = "ACCOUNT_NAME")
 	private String name;
+
+	@Column(name = "OPENING_BALANCE")
 	private double openingBalance;
+
+	@Column(name = "CLOSING_BALANCE")
 	private double closingBalance;
+
+	@Column(name = "OPENED_ON")
 	private Date openedOn;
+
+	@Column(name = "MODIFIED_ON")
 	private Date modifiedOn;
 
-	public Account() {
+	public Accounts() {
 	}
 
-	public Account(Long id) {
+	public Accounts(Long id) {
 		this.id = id;
 	}
 
-	public Account(Long id, AccountType accountType, String name, double openingBalance, double closingBalance,
+	public Accounts(Long id, AccountType accountType, String name, double openingBalance, double closingBalance,
 			Date openedOn, Date modifiedOn) {
 		super();
 		this.id = id;
@@ -113,7 +129,7 @@ public class Account {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Account other = (Account) obj;
+		Accounts other = (Accounts) obj;
 		if (id != other.id)
 			return false;
 		return true;
